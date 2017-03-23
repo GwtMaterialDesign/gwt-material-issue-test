@@ -28,6 +28,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.client.ui.MaterialDatePicker;
+import gwt.material.design.client.ui.MaterialLoader;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.test.client.application.service.Car;
 import gwt.material.design.test.client.application.service.CarServiceAsync;
@@ -53,17 +54,21 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     protected void onAttach() {
         super.onAttach();
 
+        MaterialLoader.showLoading(true);
+
         picker.setValue(null);
 
         CarServiceAsync service = GWT.create(FakeCarService.class);
         service.getCar(1, new AsyncCallback<Car>() {
             @Override
             public void onFailure(Throwable throwable) {
+                MaterialLoader.showLoading(false);
                 MaterialToast.fireToast(throwable.getMessage());
             }
 
             @Override
             public void onSuccess(Car car) {
+                MaterialLoader.showLoading(false);
                 MaterialToast.fireToast("ASync finished");
                 picker.setValue(new Date(60, 1, 1));
             }

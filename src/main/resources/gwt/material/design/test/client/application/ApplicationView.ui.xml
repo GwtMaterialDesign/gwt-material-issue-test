@@ -1,0 +1,51 @@
+<!--
+  #%L
+  GwtMaterial
+  %%
+  Copyright (C) 2015 - 2017 GwtMaterialDesign
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:m="urn:import:gwt.material.design.client.ui">
+
+    <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
+
+    <m:MaterialPanel>
+        <m:MaterialHeader>
+            <m:MaterialNavBar activates="sidenav">
+                <m:MaterialNavBrand paddingLeft="60" text="App" />
+                <m:MaterialNavSection float="RIGHT">
+                    <m:MaterialLink text="Link 1"/>
+                    <m:MaterialLink iconType="POLYMER" />
+                </m:MaterialNavSection>
+            </m:MaterialNavBar>
+            <m:MaterialSideNav m:id="sidenav" type="PUSH" width="280" alwaysShowActivator="true" showOnAttach="true">
+                <m:MaterialLink text="Link 1" iconType="POLYMER"/>
+                <m:MaterialLink text="Link 2" iconType="POLYMER"/>
+                <m:MaterialLink text="Link 3" iconType="POLYMER"/>
+            </m:MaterialSideNav>
+        </m:MaterialHeader>
+
+        <m:MaterialContainer>
+            <m:MaterialDatePicker ui:field="picker" />
+            <m:MaterialButton text="Set Null Value" ui:field="btnSetNullValue" />
+            <m:MaterialButton text="Get Value" ui:field="btnGetValue" />
+            <m:MaterialButton text="Set Value Today" ui:field="btnSetTodayValue" />
+            <m:MaterialButton text="Clear Values" ui:field="btnClearValues" />
+        </m:MaterialContainer>
+
+    </m:MaterialPanel>
+</ui:UiBinder>

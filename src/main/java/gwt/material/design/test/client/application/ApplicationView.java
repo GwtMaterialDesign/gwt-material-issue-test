@@ -41,57 +41,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
-    @UiField
-    MaterialDatePicker picker;
-
     @Inject
     ApplicationView(
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-    }
-
-    @Override
-    protected void onAttach() {
-        super.onAttach();
-
-        MaterialLoader.showLoading(true);
-
-        picker.setValue(null);
-
-        CarServiceAsync service = GWT.create(FakeCarService.class);
-        service.getCar(1, new AsyncCallback<Car>() {
-            @Override
-            public void onFailure(Throwable throwable) {
-                MaterialLoader.showLoading(false);
-                MaterialToast.fireToast(throwable.getMessage());
-            }
-
-            @Override
-            public void onSuccess(Car car) {
-                MaterialLoader.showLoading(false);
-                MaterialToast.fireToast("ASync finished");
-                picker.setValue(new Date(60, 1, 1));
-            }
-        });
-    }
-
-    @UiHandler("btnGetValue")
-    void onGetValue(ClickEvent e) {
-        MaterialToast.fireToast(picker.getValue() + "");
-    }
-
-    @UiHandler("btnSetNullValue")
-    void onSetNullValue(ClickEvent e) {
-        picker.setValue(null);
-    }
-
-    @UiHandler("btnClearValues")
-    void onClearValues(ClickEvent e) {
-        picker.clearValues();
-    }
-
-    @UiHandler("btnSetTodayValue")
-    void onSetTodayValue(ClickEvent e) {
-        picker.setValue(new Date());
     }
 }

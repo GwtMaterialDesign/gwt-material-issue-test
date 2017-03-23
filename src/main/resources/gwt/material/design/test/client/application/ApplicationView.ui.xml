@@ -32,7 +32,7 @@
                     <m:MaterialLink iconType="POLYMER" />
                 </m:MaterialNavSection>
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" type="PUSH" width="280" alwaysShowActivator="true" showOnAttach="true">
+            <m:MaterialSideNav m:id="sidenav" type="PUSH" alwaysShowActivator="true" width="280">
                 <m:MaterialLink text="Link 1" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 2" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 3" iconType="POLYMER"/>
@@ -40,15 +40,7 @@
         </m:MaterialHeader>
 
         <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #588" description="MaterialDatePicker setPickerDate call by setValue problem on async callback #588" />
-
-            <m:MaterialRow>
-                <m:MaterialDatePicker ui:field="picker" placeholder="Date Picker" grid="s12 m4 l4" />
-            </m:MaterialRow>
-            <m:MaterialButton text="Set Null Value" ui:field="btnSetNullValue" />
-            <m:MaterialButton text="Get Value" ui:field="btnGetValue" />
-            <m:MaterialButton text="Set Value Today" ui:field="btnSetTodayValue" />
-            <m:MaterialButton text="Clear Values" ui:field="btnClearValues" />
+            <m:MaterialTitle title="Issue #589" description="MaterialSideNav: setAlwaysShowActivator(false) not working for type PUSH #589" />
         </m:MaterialContainer>
 
     </m:MaterialPanel>

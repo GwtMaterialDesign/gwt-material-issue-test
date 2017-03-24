@@ -27,8 +27,10 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
+import gwt.material.design.client.constants.SideNavType;
 import gwt.material.design.client.ui.MaterialDatePicker;
 import gwt.material.design.client.ui.MaterialLoader;
+import gwt.material.design.client.ui.MaterialSideNav;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.test.client.application.service.Car;
 import gwt.material.design.test.client.application.service.CarServiceAsync;
@@ -40,6 +42,9 @@ import java.util.Date;
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
+
+    @UiField
+    MaterialSideNav sideNav;
 
     @Inject
     ApplicationView(

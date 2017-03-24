@@ -24,7 +24,7 @@
     <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
 
     <m:MaterialPanel>
-        <m:MaterialHeader>
+        <m:MaterialHeader paddingLeft="280">
             <m:MaterialNavBar activates="sidenav">
                 <m:MaterialNavBrand paddingLeft="60" text="App" />
                 <m:MaterialNavSection float="RIGHT">
@@ -32,15 +32,15 @@
                     <m:MaterialLink iconType="POLYMER" />
                 </m:MaterialNavSection>
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" type="PUSH" alwaysShowActivator="true" width="280">
+            <m:MaterialSideNav ui:field="sideNav" m:id="sidenav" type="FIXED" width="280">
                 <m:MaterialLink text="Link 1" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 2" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 3" iconType="POLYMER"/>
             </m:MaterialSideNav>
         </m:MaterialHeader>
 
-        <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #589" description="MaterialSideNav: setAlwaysShowActivator(false) not working for type PUSH #589" />
+        <m:MaterialContainer padding="40" paddingLeft="320">
+            <m:MaterialTitle title="Issue #579" description="SideNav with Type Fixed initial resize disappears #579" />
         </m:MaterialContainer>
 
     </m:MaterialPanel>

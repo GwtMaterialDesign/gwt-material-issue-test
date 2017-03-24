@@ -32,7 +32,7 @@
                     <m:MaterialLink iconType="POLYMER" />
                 </m:MaterialNavSection>
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" type="PUSH" alwaysShowActivator="true" width="280">
+            <m:MaterialSideNav m:id="sidenav" type="PUSH" alwaysShowActivator="false" width="280">
                 <m:MaterialLink text="Link 1" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 2" iconType="POLYMER"/>
                 <m:MaterialLink text="Link 3" iconType="POLYMER"/>

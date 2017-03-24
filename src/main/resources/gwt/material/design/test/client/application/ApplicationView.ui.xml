@@ -19,7 +19,8 @@
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
         xmlns:g='urn:import:com.google.gwt.user.client.ui'
-        xmlns:m="urn:import:gwt.material.design.client.ui">
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+        xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
 
@@ -40,7 +41,10 @@
         </m:MaterialHeader>
 
         <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #589" description="MaterialSideNav: setAlwaysShowActivator(false) not working for type PUSH #589" />
+            <m:MaterialTitle title="Issue #208" description="Transition fails on Edge when height value was set. The windows is not properly maximized. #208" />
+            <ma:window.MaterialWindow ui:field="window" title="Sample Window" height="500px">
+                <m:MaterialTitle textAlign="CENTER" padding="20" title="Test Window" description="Improved Window maximize animation and fixed height issue on maximize" />
+            </ma:window.MaterialWindow>
         </m:MaterialContainer>
 
     </m:MaterialPanel>

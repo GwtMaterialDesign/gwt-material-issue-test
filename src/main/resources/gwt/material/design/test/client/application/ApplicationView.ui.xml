@@ -41,8 +41,8 @@
         </m:MaterialHeader>
 
         <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #208" description="Transition fails on Edge when height value was set. The windows is not properly maximized. #208" />
-            <ma:window.MaterialWindow ui:field="window" title="Sample Window" height="500px">
+            <m:MaterialTitle title="Issue #591" description="MaterialWindow is not taking color overrides. #591" />
+            <ma:window.MaterialWindow ui:field="window" toolbarColor="PINK" backgroundColor="AMBER" title="Sample Window" height="500px">
                 <m:MaterialTitle textAlign="CENTER" padding="20" title="Test Window" description="Improved Window maximize animation and fixed height issue on maximize" />
             </ma:window.MaterialWindow>
         </m:MaterialContainer>

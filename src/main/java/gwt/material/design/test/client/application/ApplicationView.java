@@ -29,6 +29,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gwt.material.design.addins.client.window.MaterialWindow;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.MaterialDatePicker;
 import gwt.material.design.client.ui.MaterialLoader;
 import gwt.material.design.client.ui.MaterialToast;
@@ -50,6 +51,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     ApplicationView(
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
         Timer t = new Timer() {
             @Override
             public void run() {

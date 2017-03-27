@@ -41,10 +41,12 @@
         </m:MaterialHeader>
 
         <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #591" description="MaterialWindow is not taking color overrides. #591" />
-            <ma:window.MaterialWindow ui:field="window" toolbarColor="PINK" backgroundColor="AMBER" title="Sample Window" height="500px">
-                <m:MaterialTitle textAlign="CENTER" padding="20" title="Test Window" description="Improved Window maximize animation and fixed height issue on maximize" />
-            </ma:window.MaterialWindow>
+            <m:MaterialTitle title="Issue #197" description="MaterialComboBox issue with multiple selection #197" />
+            <ma:combobox.MaterialComboBox ui:field="comboBox" label="ComboBox" multiple="true">
+
+            </ma:combobox.MaterialComboBox>
+            <m:MaterialButton text="Set Values" ui:field="btnSetValues" />
+            <m:MaterialButton text="Get Selected Values" ui:field="btnGetSelectedValues" />
         </m:MaterialContainer>
 
     </m:MaterialPanel>

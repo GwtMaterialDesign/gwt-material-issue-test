@@ -19,29 +19,76 @@
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
         xmlns:g='urn:import:com.google.gwt.user.client.ui'
-        xmlns:m="urn:import:gwt.material.design.client.ui">
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+             xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
 
     <m:MaterialPanel>
-        <m:MaterialHeader>
+        <m:MaterialHeader ui:field="header">
             <m:MaterialNavBar activates="sidenav">
                 <m:MaterialNavBrand paddingLeft="60" text="App" />
-                <m:MaterialNavSection float="RIGHT">
-                    <m:MaterialLink text="Link 1"/>
-                    <m:MaterialLink iconType="POLYMER" />
+
+                <m:MaterialNavSection float="RIGHT" hideOn="NONE">
+                    <m:MaterialNavMenu iconType="MENU" activates="sidenavRight" />
                 </m:MaterialNavSection>
+
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" type="PUSH" alwaysShowActivator="false" width="280">
-                <m:MaterialLink text="Link 1" iconType="POLYMER"/>
-                <m:MaterialLink text="Link 2" iconType="POLYMER"/>
-                <m:MaterialLink text="Link 3" iconType="POLYMER"/>
+            <m:MaterialSideNav m:id="sidenav" ui:field="sideNav" type="PUSH_WITH_HEADER" allowBodyScroll="true" width="280">
+                <m:MaterialLink iconType="POLYMER" text="ITEM  ITEM 1 ITEM 1 ITEM 11 ITEM 1 ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
             </m:MaterialSideNav>
+
+            <!--<m:MaterialSideNav m:id="sidenavRight" ui:field="sideNavRight" type="CARD" allowBodyScroll="true" edge="RIGHT" closeOnClick="true" alwaysShowActivator="true" width="280">
+                <m:MaterialNavBrand text="Filter" />
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+            </m:MaterialSideNav>-->
         </m:MaterialHeader>
 
-        <m:MaterialContainer padding="40">
-            <m:MaterialTitle title="Issue #589" description="MaterialSideNav: setAlwaysShowActivator(false) not working for type PUSH #589" />
+        <m:MaterialContainer padding="40" height="1800px">
+            <m:MaterialTitle title="Issue #213" description="ComboBox - Update design with the same style with Chosen #213" />
+            <m:MaterialRow marginTop="1000">
+                <ma:combobox.MaterialComboBox label="Combo Box" multiple="false" hideSearch="true" allowClear="false" ui:field="combo" grid="s4">
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
+                </ma:combobox.MaterialComboBox>
+                <m:MaterialTextBox label="Text Box" grid="s4" />
+            </m:MaterialRow>
         </m:MaterialContainer>
 
+        <m:MaterialFooter backgroundColor="BLUE" type="FIXED">
+            <m:MaterialFooterCopyright>
+                <m:MaterialLabel text="© 2015 Copyright GWT Material" />
+            </m:MaterialFooterCopyright>
+        </m:MaterialFooter>
     </m:MaterialPanel>
 </ui:UiBinder>

@@ -74,14 +74,37 @@
 
         <m:MaterialContainer padding="40" height="1800px">
             <m:MaterialTitle title="Issue #213" description="ComboBox - Update design with the same style with Chosen #213" />
-            <m:MaterialRow marginTop="1000">
-                <ma:combobox.MaterialComboBox label="Combo Box" multiple="false" hideSearch="true" allowClear="false" ui:field="combo" grid="s4">
+            <m:MaterialRow>
+                <ma:combobox.MaterialComboBox label="Combo Box" multiple="true" limit="2" hideSearch="false" allowClear="false" grid="s4">
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
+                </ma:combobox.MaterialComboBox>
+                <ma:combobox.MaterialComboBox label="Combo Box" multiple="false" hideSearch="false" allowClear="false" ui:field="combo" grid="s4">
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
+                    <m:html.Option text="Alaska" />
+                    <m:html.Option text="Manila" />
+                    <m:html.Option text="Makati" />
+                    <m:html.Option text="Toronto" />
                     <m:html.Option text="Alaska" />
                     <m:html.Option text="Manila" />
                     <m:html.Option text="Makati" />
                     <m:html.Option text="Toronto" />
                 </ma:combobox.MaterialComboBox>
                 <m:MaterialTextBox label="Text Box" grid="s4" />
+                <m:MaterialCheckBox text="SAMPLE" />
             </m:MaterialRow>
         </m:MaterialContainer>
 

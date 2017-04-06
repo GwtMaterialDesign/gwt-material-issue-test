@@ -19,30 +19,23 @@
  */
 package gwt.material.design.test.client.application;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
-import gwt.material.design.addins.client.combobox.MaterialComboBox;
-import gwt.material.design.client.constants.SideNavType;
-import gwt.material.design.client.ui.*;
-import gwt.material.design.test.client.application.service.Car;
-import gwt.material.design.test.client.application.service.CarServiceAsync;
-import gwt.material.design.test.client.application.service.FakeCarService;
+import gwt.material.design.addins.client.sideprofile.MaterialSideProfile;
+import gwt.material.design.client.ui.MaterialHeader;
+import gwt.material.design.client.ui.MaterialImage;
+import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialSideNav;
+import gwt.material.design.client.ui.animate.MaterialAnimation;
+import gwt.material.design.client.ui.animate.Transition;
 
 import javax.inject.Inject;
-import java.util.Date;
 
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
-
-    @UiField
-    MaterialComboBox<String> combo;
 
     @UiField
     MaterialSideNav sideNav;
@@ -50,9 +43,39 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @UiField
     MaterialHeader header;
 
+    @UiField
+    MaterialSideProfile sideProfile;
+
+    @UiField
+    MaterialPanel namePanel;
+
+    @UiField
+    MaterialImage image;
+
     @Inject
     ApplicationView(
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        sideNav.addOpeningHandler(event -> {
+            new MaterialAnimation().durationMillis(400).transition(Transition.FADEINDOWN).animate(namePanel);
+            image.setWidth("60px");
+            image.setHeight("60px");
+            sideProfile.setHeight("160px");
+        });
+        sideNav.addClosingHandler(event -> {
+            new MaterialAnimation().durationMillis(400).transition(Transition.FADEOUTUP).animate(namePanel);
+            image.setWidth("32px");
+            image.setHeight("32px");
+            sideProfile.setHeight("64px");
+
+        });
+        sideNav.addOpenedHandler(event -> {
+            namePanel.setVisible(true);
+        });
+        sideNav.addClosedHandler(event -> {
+            namePanel.setVisible(false);
+        });
+
     }
 }

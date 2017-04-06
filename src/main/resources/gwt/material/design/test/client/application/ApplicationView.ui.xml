@@ -23,7 +23,21 @@
              xmlns:ma="urn:import:gwt.material.design.addins.client">
 
     <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
+    <ui:style gss="true">
+        body {
+            overflow: auto !important;
+        }
+        @external active;
+        ul.sidenav li.active a i {
+            color: #2196f3 !important;
+        }
 
+        .anim, ul.sidenav img {
+            transition: 0.4s all;
+            -webkit-transition: 0.4s all;
+            -moz-transition: 0.4s all;
+        }
+    </ui:style>
     <m:MaterialPanel>
         <m:MaterialHeader ui:field="header">
             <m:MaterialNavBar activates="sidenav">
@@ -34,77 +48,39 @@
                 </m:MaterialNavSection>
 
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" ui:field="sideNav" type="PUSH_WITH_HEADER" allowBodyScroll="true" width="280">
-                <m:MaterialLink iconType="POLYMER" text="ITEM  ITEM 1 ITEM 1 ITEM 11 ITEM 1 ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
+            <m:MaterialSideNav m:id="sidenav" addStyleNames="{style.sidenav}" ui:field="sideNav" expandOnClick="true" type="MINI_WITH_EXPAND" allowBodyScroll="true" closeOnClick="false" width="280">
+                <ma:sideprofile.MaterialSideProfile ui:field="sideProfile" height="64" addStyleNames="{style.anim}">
+                    <m:MaterialImage ui:field="image" width="32px" height="32px" url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" />
+                    <m:MaterialPanel ui:field="namePanel" visible="false">
+                        <m:MaterialLabel ui:field="name" text="GWT Material" textColor="BLACK"/>
+                        <m:MaterialLink ui:field="email" text="gwt-material@gmail.com" activates="dropProfile" textColor="GREY"/>
+                    </m:MaterialPanel>
+                </ma:sideprofile.MaterialSideProfile>
+                <m:MaterialLink iconType="INBOX" text="Inbox">
+                    <m:MaterialBadge text="1 new" />
+                </m:MaterialLink>
+                <m:MaterialLink iconType="STAR" text="Starred"/>
+                <m:MaterialLink iconType="SEND" text="Send Mail"/>
+                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+                <m:MaterialLink iconType="MAIL" text="All Mail"/>
+                <m:MaterialLink iconType="DELETE" text="Trash"/>
+                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
             </m:MaterialSideNav>
 
-            <!--<m:MaterialSideNav m:id="sidenavRight" ui:field="sideNavRight" type="CARD" allowBodyScroll="true" edge="RIGHT" closeOnClick="true" alwaysShowActivator="true" width="280">
-                <m:MaterialNavBrand text="Filter" />
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-                <m:MaterialLink iconType="POLYMER" text="ITEM 1"/>
-            </m:MaterialSideNav>-->
+            <m:MaterialSideNav m:id="sidenavRight" ui:field="sideNavRight" type="MINI_WITH_EXPAND" allowBodyScroll="true" edge="RIGHT" alwaysShowActivator="true" width="280">
+                <m:MaterialLink iconType="INBOX" text="Inbox"/>
+                <m:MaterialLink iconType="STAR" text="Starred"/>
+                <m:MaterialLink iconType="SEND" text="Send Mail"/>
+                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+                <m:MaterialLink iconType="MAIL" text="All Mail"/>
+                <m:MaterialLink iconType="DELETE" text="Trash"/>
+                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
+            </m:MaterialSideNav>
         </m:MaterialHeader>
 
-        <m:MaterialContainer padding="40" height="1800px">
-            <m:MaterialTitle title="Issue #213" description="ComboBox - Update design with the same style with Chosen #213" />
-            <m:MaterialRow>
-                <ma:combobox.MaterialComboBox label="Combo Box" multiple="true" limit="2" hideSearch="false" allowClear="false" grid="s4">
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                </ma:combobox.MaterialComboBox>
-                <ma:combobox.MaterialComboBox label="Combo Box" multiple="false" hideSearch="false" allowClear="false" ui:field="combo" grid="s4">
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                    <m:html.Option text="Alaska" />
-                    <m:html.Option text="Manila" />
-                    <m:html.Option text="Makati" />
-                    <m:html.Option text="Toronto" />
-                </ma:combobox.MaterialComboBox>
-                <m:MaterialTextBox label="Text Box" grid="s4" />
-                <m:MaterialCheckBox text="SAMPLE" />
+        <m:MaterialContainer height="1800px">
+            <m:MaterialRow padding="40">
+                <m:MaterialTitle title="MINI_WITH_EXPAND" description="Provides a sidenav with mini variant sidenav and provides a expand feature" />
             </m:MaterialRow>
         </m:MaterialContainer>
 

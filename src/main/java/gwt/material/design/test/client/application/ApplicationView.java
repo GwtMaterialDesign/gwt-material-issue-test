@@ -19,6 +19,7 @@
  */
 package gwt.material.design.test.client.application;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
@@ -57,25 +58,27 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        sideNav.addOpeningHandler(event -> {
-            new MaterialAnimation().durationMillis(400).transition(Transition.FADEINDOWN).animate(namePanel);
+       /* sideNav.addOpeningHandler(event -> {
+            new MaterialAnimation().duration(400).transition(Transition.FADEINDOWN).animate(namePanel);
             image.setWidth("60px");
             image.setHeight("60px");
             sideProfile.setHeight("160px");
+            GWT.log("Opening");
         });
         sideNav.addClosingHandler(event -> {
-            new MaterialAnimation().durationMillis(400).transition(Transition.FADEOUTUP).animate(namePanel);
+            new MaterialAnimation().duration(400).transition(Transition.FADEOUTUP).animate(namePanel);
             image.setWidth("32px");
             image.setHeight("32px");
             sideProfile.setHeight("64px");
-
+            GWT.log("Closing");
         });
         sideNav.addOpenedHandler(event -> {
             namePanel.setVisible(true);
+            GWT.log("OPened");
         });
         sideNav.addClosedHandler(event -> {
             namePanel.setVisible(false);
-        });
+        });*/
 
     }
 }

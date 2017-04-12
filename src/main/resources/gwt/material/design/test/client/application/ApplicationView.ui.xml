@@ -24,19 +24,7 @@
 
     <ui:with field="res" type="gwt.material.design.test.client.resources.AppResources"/>
     <ui:style gss="true">
-        body {
-            overflow: auto !important;
-        }
-        @external active;
-        ul.sidenav li.active a i {
-            color: #2196f3 !important;
-        }
 
-        .anim, ul.sidenav img {
-            transition: 0.4s all;
-            -webkit-transition: 0.4s all;
-            -moz-transition: 0.4s all;
-        }
     </ui:style>
     <m:MaterialPanel>
         <m:MaterialHeader ui:field="header">
@@ -44,12 +32,12 @@
                 <m:MaterialNavBrand paddingLeft="60" text="App" />
 
                 <m:MaterialNavSection float="RIGHT" hideOn="NONE">
-                    <m:MaterialNavMenu iconType="MENU" activates="sidenavRight" />
+                    <m:MaterialNavMenu iconType="MENU" activates="sidenav2" />
                 </m:MaterialNavSection>
-
+                <m:MaterialNavMenu iconType="AC_UNIT" float="RIGHT" activates="sidenavRight"  display="BLOCK"/>
             </m:MaterialNavBar>
-            <m:MaterialSideNav m:id="sidenav" addStyleNames="{style.sidenav}" ui:field="sideNav" expandOnClick="true" type="MINI_WITH_EXPAND" allowBodyScroll="true" closeOnClick="false" width="280">
-                <ma:sideprofile.MaterialSideProfile ui:field="sideProfile" height="64" addStyleNames="{style.anim}">
+            <m:MaterialMiniSideNav m:id="sidenav" ui:field="sideNav" expandOnClick="true" expandable="true" width="280">
+                <ma:sideprofile.MaterialSideProfile ui:field="sideProfile" height="64">
                     <m:MaterialImage ui:field="image" width="32px" height="32px" url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" />
                     <m:MaterialPanel ui:field="namePanel" visible="false">
                         <m:MaterialLabel ui:field="name" text="GWT Material" textColor="BLACK"/>
@@ -59,27 +47,37 @@
                 <m:MaterialLink iconType="INBOX" text="Inbox">
                     <m:MaterialBadge text="1 new" />
                 </m:MaterialLink>
-                <m:MaterialLink iconType="STAR" text="Starred"/>
+                <m:MaterialLink iconType="STAR" text="Very very very very very very very very long"/>
                 <m:MaterialLink iconType="SEND" text="Send Mail"/>
                 <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
                 <m:MaterialLink iconType="MAIL" text="All Mail"/>
                 <m:MaterialLink iconType="DELETE" text="Trash"/>
                 <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
-            </m:MaterialSideNav>
+                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+                <m:MaterialLink iconType="MAIL" text="All Mail"/>
+                <m:MaterialLink iconType="DELETE" text="Trash"/>
+                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
+            </m:MaterialMiniSideNav>
+            <m:MaterialDrawerSideNav m:id="sidenav2" edge="RIGHT" width="280">
+                <m:MaterialLink iconType="INBOX" text="Inbox">
+                    <m:MaterialBadge text="1 new" />
+                </m:MaterialLink>
+                <m:MaterialLink iconType="STAR" text="Very very very very very very very very long"/>
+                <m:MaterialLink iconType="SEND" text="Send Mail"/>
+                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+                <m:MaterialLink iconType="MAIL" text="All Mail"/>
+                <m:MaterialLink iconType="DELETE" text="Trash"/>
+                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
+                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+                <m:MaterialLink iconType="MAIL" text="All Mail"/>
+                <m:MaterialLink iconType="DELETE" text="Trash"/>
+                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
+            </m:MaterialDrawerSideNav>
 
-            <m:MaterialSideNav m:id="sidenavRight" ui:field="sideNavRight" type="MINI_WITH_EXPAND" allowBodyScroll="true" edge="RIGHT" alwaysShowActivator="true" width="280">
-                <m:MaterialLink iconType="INBOX" text="Inbox"/>
-                <m:MaterialLink iconType="STAR" text="Starred"/>
-                <m:MaterialLink iconType="SEND" text="Send Mail"/>
-                <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
-                <m:MaterialLink iconType="MAIL" text="All Mail"/>
-                <m:MaterialLink iconType="DELETE" text="Trash"/>
-                <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
-            </m:MaterialSideNav>
         </m:MaterialHeader>
 
         <m:MaterialContainer height="1800px">
-            <m:MaterialRow padding="40">
+            <m:MaterialRow padding="40" float="RIGHT">
                 <m:MaterialTitle title="MINI_WITH_EXPAND" description="Provides a sidenav with mini variant sidenav and provides a expand feature" />
             </m:MaterialRow>
         </m:MaterialContainer>

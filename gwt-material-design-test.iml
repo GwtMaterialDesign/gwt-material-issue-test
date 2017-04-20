@@ -97,6 +97,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.gwtplatform:gwtp-mvp-shared:1.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="module" module-name="gwt-material" />
+    <orderEntry type="library" name="Maven: com.github.gwtmaterialdesign:gwt-material-jquery:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="gwt-material-themes" />
+    <orderEntry type="module" module-name="gwt-material-addins" />
+    <orderEntry type="library" name="Maven: com.github.gwtmaterialdesign:gwt-material-table:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt.inject:gin:2.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.inject:guice:3.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.inject:javax.inject:1" level="project" />
@@ -104,10 +109,5 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.inject.extensions:guice-assistedinject:3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="module" module-name="gwt-material" />
-    <orderEntry type="module" module-name="gwt-material-addins" />
-    <orderEntry type="module" module-name="gwt-material-jquery" />
-    <orderEntry type="module" module-name="gwt-material-themes" />
-    <orderEntry type="module" module-name="gwt-material-table" />
   </component>
 </module>

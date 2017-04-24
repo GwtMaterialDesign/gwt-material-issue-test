@@ -37,6 +37,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.github.gwtmaterialdesign:gwt-material-jquery:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.gwt:gwt-servlet:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.jsinterop:jsinterop-annotations:1.0.1" level="project" />
@@ -98,7 +99,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.4" level="project" />
     <orderEntry type="module" module-name="gwt-material" />
-    <orderEntry type="library" name="Maven: com.github.gwtmaterialdesign:gwt-material-jquery:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="gwt-material-jquery" />
     <orderEntry type="module" module-name="gwt-material-themes" />
     <orderEntry type="module" module-name="gwt-material-addins" />
     <orderEntry type="library" name="Maven: com.github.gwtmaterialdesign:gwt-material-table:1.0-SNAPSHOT" level="project" />

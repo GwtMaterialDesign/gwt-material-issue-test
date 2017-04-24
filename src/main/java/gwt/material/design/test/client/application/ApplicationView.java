@@ -34,35 +34,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
-    @UiField
-    MaterialCollection collection;
-
     @Inject
     ApplicationView(
             Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-
-        for (int i = 1; i <= 5; i++) {
-            MaterialCollectionItem item = new MaterialCollectionItem();
-            item.setType(CollectionType.CHECKBOX);
-            item.setWaves(WavesType.DEFAULT);
-            MaterialLabel label = new MaterialLabel("Item " + i);
-            item.add(label);
-
-            MaterialCollectionSecondary secondary = new MaterialCollectionSecondary();
-            MaterialCheckBox checkBox = new MaterialCheckBox();
-            checkBox.setValue(false);
-            checkBox.setType(CheckBoxType.FILLED);
-            secondary.add(checkBox);
-
-
-            item.addClickHandler(clickEvent -> {
-                MaterialToast.fireToast("TEST");
-            });
-
-            item.add(secondary);
-            collection.add(item);
-        }
-
     }
 }

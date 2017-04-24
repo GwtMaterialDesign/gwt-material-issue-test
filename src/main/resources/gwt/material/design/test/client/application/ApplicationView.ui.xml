@@ -27,6 +27,10 @@
 
     </ui:style>
     <m:MaterialPanel>
-        <m:MaterialCollection ui:field="collection" />
+        <ma:combobox.MaterialComboBox textColor="PURPLE" label="Label" placeholder="Placeholder">
+            <m:html.Option text="Option 1" />
+            <m:html.Option text="Option 2" />
+            <m:html.Option text="Option 3" />
+        </ma:combobox.MaterialComboBox>
     </m:MaterialPanel>
 </ui:UiBinder>
